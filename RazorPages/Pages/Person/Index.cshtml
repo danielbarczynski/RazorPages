@@ -1,4 +1,42 @@
 ﻿@page
-@model RazorPages.Pages.Person.IndexModel
+@model IndexModel
 
 <h1>Person Index</h1>
+<a asp-page="Create">
+<button>Create Person</button>
+</a>
+
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.Person.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Person.Age)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.Persons)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Age
+                </td>
+                <td>
+                    <form method="post" asp-route-id="@item.Id">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+
+    }
+</table>

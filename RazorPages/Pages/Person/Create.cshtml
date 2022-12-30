@@ -1,0 +1,12 @@
+﻿@page
+@model RazorPages.Pages.Person.CreateModel
+
+<h1>Create Person</h1>
+
+<form method="post">
+    <label asp-for="Person.Name"></label>
+    <input asp-for="Person.Name"/>
+    <label asp-for="Person.Age"></label>
+    <input asp-for="Person.Age"/>
+    <button type="submit">Create</button>
+</form>
