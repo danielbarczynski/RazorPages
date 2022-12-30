@@ -2,13 +2,17 @@
 @model IndexModel
 
 <h1>Person Index</h1>
+
 <a asp-page="Create">
-<button>Create Person</button>
+    <button>Create Person</button>
 </a>
 
 <table class="table text-light">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.Person.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(x => x.Person.Name)
             </th>
@@ -25,6 +29,9 @@
         <tbody>
             <tr>
                 <td>
+                    @item.Id
+                </td>
+                <td>
                     @item.Name
                 </td>
                 <td>
@@ -34,6 +41,9 @@
                     <form method="post" asp-route-id="@item.Id">
                         <button type="submit">Delete</button>
                     </form>
+                    <a asp-page="Update" asp-route-id="@item.Id">
+                        Update
+                    </a>
                 </td>
             </tr>
         </tbody>

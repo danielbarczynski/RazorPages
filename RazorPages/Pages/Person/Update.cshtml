@@ -1,0 +1,13 @@
+﻿@page
+@model RazorPages.Pages.Person.UpdateModel
+
+<h1>Update Person</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Person.Id" />
+    <label asp-for="Person.Name"></label>
+    <input asp-for="Person.Name"/>
+    <label asp-for="Person.Age"></label>
+    <input asp-for="Person.Age"/>
+    <button type="submit">Update</button>
+</form>
